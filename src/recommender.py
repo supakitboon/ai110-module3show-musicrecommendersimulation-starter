@@ -96,10 +96,16 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, str]:
         score += 1.0
         reasons.append(f"mood match ({song['mood']}, +1.0)")
 
-    # Energy similarity: up to +1.0 (1.0 = perfect match, 0.0 = furthest apart)
+    # Energy similarity: up to +1.0
     energy_sim = round(1.0 - abs(song.get("energy", 0.0) - user_prefs.get("target_energy", 0.0)), 2)
     score += energy_sim
     reasons.append(f"energy similarity ({energy_sim:.2f})")
+
+    # Tempo similarity: up to +0.5 (scaled so 60 BPM apart = 0 bonus)
+    if user_prefs.get("target_tempo_bpm") and song.get("tempo_bpm"):
+        tempo_sim = round(max(0.0, 1.0 - abs(song["tempo_bpm"] - user_prefs["target_tempo_bpm"]) / 60.0) * 0.5, 2)
+        score += tempo_sim
+        reasons.append(f"tempo similarity ({tempo_sim:.2f})")
 
     explanation = "Recommended because: " + " | ".join(reasons)
     return score, explanation
