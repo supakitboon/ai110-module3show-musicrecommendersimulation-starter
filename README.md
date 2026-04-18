@@ -162,7 +162,7 @@ Read the full model card here: [**model_card.md**](model_card.md)
 │   └── recommender.py         # load_songs, score_song, recommend_songs
 ├── tests/
 │   └── test_recommender.py    # Starter tests
-├── assets/                    # Screenshots (add CLI_Verification.png here)
+├── assets/                    # CLI_Verification.png, Recommand_after_profile.png
 ├── model_card.md              # Full bias and evaluation writeup
 ├── reflection.md              # Profile comparison notes
 └── README.md

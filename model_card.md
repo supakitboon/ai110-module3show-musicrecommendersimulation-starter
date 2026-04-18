@@ -51,7 +51,7 @@ All songs get scored, then sorted from highest to lowest. The top 5 are shown wi
 
 **The genre bonus is too powerful.**
 
-Genre gives +2.0 points. Mood and energy together max out at 2.0. So a song that matches your genre will almost always beat every other song — even if the mood and energy are wrong.
+Genre gives +2.0 points. Mood, energy, and tempo together max out at 2.5. So a song that matches your genre will almost always beat every other song — even if the mood and energy are wrong.
 
 Most genres only have 1 song. That means one song wins every time for that genre. No competition.
 
